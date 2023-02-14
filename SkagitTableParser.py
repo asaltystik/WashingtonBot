@@ -14,7 +14,7 @@ def Parse(File):
             print(df)
             Frames.append(df)
         Result = pd.concat(Frames)
-        NewFileName = "D:\WashingtonBot\CSV\Skagit\\"+File[28:-4] + ".csv"
+        NewFileName = "C:\\Users\\caric\\WashingtonBot\\CSV\\"+File[34:-4] + ".csv"
         print(NewFileName)
         Result.to_csv(NewFileName)
         print("Created File: " + NewFileName + '\n')

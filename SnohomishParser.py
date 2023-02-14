@@ -79,7 +79,7 @@ def Type1(File: str):
     df = df.drop(index=0)
     df = df.reset_index(drop=True)
     print(df)
-    NewFileName = "D:\WashingtonBot\CSV\Snohomish\SnohomishCountyType1-" + time.strftime("%m-%d-%Y-%H-%M") + ".csv"
+    NewFileName = "C:\\Users\\caric\\WashingtonBot\\CSV\\SnohomishCountyType1-" + time.strftime("%m-%d-%Y-%H-%M") + ".csv"
     df.to_csv(NewFileName)
     print("Created: " + NewFileName)
 
@@ -153,6 +153,6 @@ def Type2(File: str):
         "Due Date" : DueDate
     })
     print(df)
-    NewFileName = "D:\WashingtonBot\CSV\Snohomish\SnohomishCountyType2-" + time.strftime("%m-%d-%Y-%H-%M") + ".csv" 
+    NewFileName = "C:\\Users\\caric\\WashingtonBot\\CSV\\SnohomishCountyType2-" + time.strftime("%m-%d-%Y-%H-%M") + ".csv" 
     df.to_csv(NewFileName)
     print("Created: " + NewFileName)

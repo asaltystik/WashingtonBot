@@ -70,6 +70,47 @@ def Pierce():
                 continue
 
 
+
+def Automated():
+    print("Tax Collection Data Parser")
+    print("Files in PDF Folder must start with a Capital Letter to prevent issues with the windows file system.")
+    print("If File Start with a Number such as '2022 WebList' Add any uppercase letter before 2022.")
+    print("Example\n 2022 WebList.pdf -> A2022Weblist.pdf")
+    print("PDF Folder can be found in C:\\Users\\caric\\WashingtonBot\\PDF")
+    print("Open each file and check to see if you can highlight text in the pdf.")
+    print("If the file cant be highlighted please open it in google docs and download it as a .txt file")
+    print("Contact CarickBrandt@gmail.com if you have any questions or technical issues")
+    next = input("Press Enter to start the automation process")
+    for FileName in os.listdir("C:\\Users\\caric\\WashingtonBot\\PDF"):
+        File = "C:\\Users\\caric\\WashingtonBot\\PDF\\" + FileName
+        if File.endswith("pdf"):
+            print(File)
+            try:
+                SkagitTableParser.Parse(File)
+            except:
+                try:
+                    PierceTableParser.Parse(File)
+                except:
+                    try:
+                        PierceWebListParser.Run(File)
+                    except:
+                        print("Unknown Format")
+        time.sleep(4)
+        if File.endswith("txt"):
+            print(File)
+            try:
+                SnohomishParser.Type1(File)
+            except:
+                try:
+                    SnohomishParser.Type2(File)
+                except:
+                    print("Unknown Format")
+        time.sleep(4)
+
+
+          
+
+
 # Start Menu and loop till quit
 def Menu():
     Active = True
@@ -128,4 +169,5 @@ def Menu():
             Active = False
     exit()
 
-Menu()
+#Menu()
+Automated()

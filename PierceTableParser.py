@@ -41,6 +41,7 @@ def Parse(FileName):
     Result = Result.drop(index=0)
     Result = Result.reset_index(drop=True)
     NewFile = ChangeFileName.ChangeFileNamePierceTableParse(FileName)
+    print(NewFile)
     Result.to_csv(NewFile)
     print("Created: " + NewFile)
     print(Result)
