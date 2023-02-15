@@ -72,6 +72,7 @@ def Pierce():
 
 
 def Automated():
+    os.system('cls')
     print("Tax Collection Data Parser")
     print("Files in PDF Folder must start with a Capital Letter to prevent issues with the windows file system.")
     print("If File Start with a Number such as '2022 WebList' Add any uppercase letter before 2022.")
@@ -95,7 +96,7 @@ def Automated():
                         PierceWebListParser.Run(File)
                     except:
                         print("Unknown Format")
-        time.sleep(4)
+        time.sleep(2)
         if File.endswith("txt"):
             print(File)
             try:
@@ -105,7 +106,9 @@ def Automated():
                     SnohomishParser.Type2(File)
                 except:
                     print("Unknown Format")
-        time.sleep(4)
+        time.sleep(2)
+    next = input("Press Enter to quit bot.")
+    exit()
 
 
           
