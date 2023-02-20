@@ -156,3 +156,5 @@ def Type2(File: str):
     NewFileName = "C:\\Users\\caric\\WashingtonBot\\CSV\\SnohomishCountyType2-" + time.strftime("%m-%d-%Y-%H-%M") + ".csv" 
     df.to_csv(NewFileName)
     print("Created: " + NewFileName)
+
+    

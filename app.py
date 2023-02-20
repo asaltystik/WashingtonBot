@@ -93,9 +93,12 @@ def Automated():
                     PierceTableParser.Parse(File)
                 except:
                     try:
-                        PierceWebListParser.Run(File)
-                    except:
-                        print("Unknown Format")
+                        PierceTableParser.ParseBiggerTable(File)
+                    except:  
+                        try:
+                            PierceWebListParser.Run(File)
+                        except:
+                            print("Unknown Format")
         time.sleep(2)
         if File.endswith("txt"):
             print(File)
