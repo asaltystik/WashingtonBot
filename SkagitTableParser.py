@@ -1,6 +1,7 @@
 #Developed By Carick Brandt 2/2023
 import pdfplumber
 import pandas as pd
+import ChangeFileName
 
 def Parse(File):
     # Open the pdf with pdfplumber
@@ -14,7 +15,7 @@ def Parse(File):
             print(df)
             Frames.append(df)
         Result = pd.concat(Frames)
-        NewFileName = "C:\\Users\\caric\\WashingtonBot\\CSV\\"+File[34:-4] + ".csv"
+        NewFileName = ChangeFileName.ChangeFileNameSkagitTableParse(File)
         print(NewFileName)
         Result.to_csv(NewFileName)
         print("Created File: " + NewFileName + '\n')

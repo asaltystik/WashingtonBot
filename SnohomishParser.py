@@ -1,7 +1,7 @@
 #Developed By Carick Brandt 2/2023
 import pandas as pd
 import re
-import time
+import ChangeFileName
 
 # Type 1 Formatting NO APN Identifier
 def Type1(File: str):
@@ -65,21 +65,21 @@ def Type1(File: str):
     CityList = [City.replace('near ','').replace('on ','') for City in CityList]
     #Create Pandas Dataframe
     df = pd.DataFrame({
-        "APN" : APNList,
-        "Owner Name" : NamesList,
-        "Address List"  : AddressList,
-        "City" : CityList,
-        "TCA" : TCAList, 
-        "Size of Lot" : SizesList,
-        "Land Value" : LandValueList,
-        "Improvement Value" : IVList,
-        "Taxes Due" : Taxes,
-        "Due Date" : DueDate
+        "APN": APNList,
+        "Owner Name": NamesList,
+        "Address List": AddressList,
+        "City": CityList,
+        "TCA": TCAList,
+        "Size of Lot": SizesList,
+        "Land Value": LandValueList,
+        "Improvement Value": IVList,
+        "Taxes Due": Taxes,
+        "Due Date": DueDate
     })
     df = df.drop(index=0)
     df = df.reset_index(drop=True)
     print(df)
-    NewFileName = "C:\\Users\\caric\\WashingtonBot\\CSV\\SnohomishCountyType1-" + time.strftime("%m-%d-%Y-%H-%M") + ".csv"
+    NewFileName = ChangeFileName.ChangeFileNameSnohomishType1()
     df.to_csv(NewFileName)
     print("Created: " + NewFileName)
 
@@ -153,7 +153,7 @@ def Type2(File: str):
         "Due Date" : DueDate
     })
     print(df)
-    NewFileName = "C:\\Users\\caric\\WashingtonBot\\CSV\\SnohomishCountyType2-" + time.strftime("%m-%d-%Y-%H-%M") + ".csv" 
+    NewFileName = ChangeFileName.ChangeFileNameSnohomishType2()
     df.to_csv(NewFileName)
     print("Created: " + NewFileName)
 

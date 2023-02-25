@@ -48,8 +48,10 @@ def Parse(FileName):
                 #print(df)
                 Frames.append(df)
     Result = pd.concat(Frames)
-    Result = Result.drop_duplicates()
-    Result = Result.drop(index=0)
+    Result.drop_duplicates(inplace=True)
+    Result.drop(index=0, inplace=True)
+    # if parcel number is not an int like 7742200232 then drop it
+    Result = Result[Result['Parcel'].str.isnumeric()]
     Result = Result.reset_index(drop=True)
     NewFile = ChangeFileName.ChangeFileNamePierceTableParse(FileName)
     print(NewFile)
@@ -77,10 +79,11 @@ def ParseBiggerTable(FileName):
                 #print(df)
                 Frames.append(df)
     Result = pd.concat(Frames)
-    Result = Result.drop_duplicates()
-    Result = Result.drop(index=0)
-    Result = Result.drop(index=1)
-    Result = Result.reset_index(drop=True)
+    Result.drop_duplicates(inplace=True)
+    Result.drop(index=[0, 1], inplace=True)
+    # if parcel number is not an int like 7742200232 then drop it
+    Result = Result[Result['Parcel'].str.isnumeric()]
+    Result.reset_index(drop=True, inplace=True)
     NewFile = ChangeFileName.ChangeFileNamePierceTableParse(FileName)
     print(NewFile)
     Result.to_csv(NewFile)
