@@ -6,6 +6,9 @@ import PierceWebListParser
 import PierceTableParser
 import SkagitTableParser
 
+Working_Directory = os.getcwd()
+
+
 Menu_Options = {
     1: "Pierce County",
     2: "Snohomish County",
@@ -17,9 +20,9 @@ Menu_Options = {
 def Skagit():
     print("Skagit County Data Parser.")
     # Find all the pdfs in PDF/Skagit Folder
-    for FileName in os.listdir("D:\WashingtonBot\PDF\Skagit"):
+    for FileName in os.listdir(os.getcwd() + "/PDF/Skagit"):
         if FileName.endswith("pdf"):
-            File = "D:\WashingtonBot\PDF\Skagit\\" + FileName
+            File = os.getcwd() + "/PDF/Skagit/" + FileName
             print(File)
             try:
                 SkagitTableParser.Parse(File)
@@ -32,9 +35,9 @@ def Skagit():
 def Snohomish():
     print("Snohomish County Data Parser.")
     # Find all the pdfs in PDF/Snohomish
-    for FileName in os.listdir("D:\WashingtonBot\PDF\Snohomish"):
+    for FileName in os.listdir(os.getcwd() + "/PDF/Snohomish"):
         if FileName.endswith("txt"):
-            File = "D:\WashingtonBot\PDF\Snohomish\\" + FileName
+            File = os.getcwd() + "/PDF/Snohomish/" + FileName
             print(File)
             try:
                 SnohomishParser.Type1(File=File)
@@ -57,7 +60,7 @@ def Pierce():
     # Find all the pdfs in PDF/Pierce
     for FileName in os.listdir("D:\WashingtonBot\PDF\Pierce"):
         if FileName.endswith("pdf"):
-            File = "D:\WashingtonBot\PDF\Pierce\\" + FileName
+            File = os.getcwd() + "/PDF/Pierce/" + FileName
             print(File)
             print("Converting List.")
             time.sleep(2)
@@ -82,8 +85,8 @@ def Automated():
     print("If the file cant be highlighted please open it in google docs and download it as a .txt file")
     print("Contact CarickBrandt@gmail.com if you have any questions or technical issues")
     next = input("Press Enter to start the automation process")
-    for FileName in os.listdir("C:\\Users\\caric\\WashingtonBot\\PDF"):
-        File = "C:\\Users\\caric\\WashingtonBot\\PDF\\" + FileName
+    for FileName in os.listdir(os.getcwd() + "/PDF"):
+        File = os. getcwd() + "/PDF/" + FileName
         if File.endswith("pdf"):
             print(File)
             try:
