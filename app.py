@@ -58,7 +58,7 @@ def Snohomish():
 def Pierce():
     print("Pierce County Data Parser.")
     # Find all the pdfs in PDF/Pierce
-    for FileName in os.listdir("D:\WashingtonBot\PDF\Pierce"):
+    for FileName in os.listdir(os.getcwd() + "/PDF/Pierce"):
         if FileName.endswith("pdf"):
             File = os.getcwd() + "/PDF/Pierce/" + FileName
             print(File)
