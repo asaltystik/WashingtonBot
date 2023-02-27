@@ -1,7 +1,14 @@
 # Created By Carick Brandt in 2/2023
 
-# Instalation
+# Python Instalation
+1. Open cmd.exe
+2. Type in Python3 and press enter then download the microsoft app that comes up.
+3. Copy and paste the following lines into cmd.exe
+    pip install pdfplumber
+    pip install pandas
 
+
+# Bot Instalation
 1. Download the Bot from https://github.com/asaltystik/WashingtonBot.
 2. Extract File WashingtonBot-master to C:\Users\User 
     (Replace User with the current user logged in typically 5 letters can be found by going to C:\Users\ and finding the current username).
