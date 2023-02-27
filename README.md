@@ -5,7 +5,7 @@
 2. Type in Python3 and press enter then download the microsoft app that comes up.
 3. Copy and paste the following lines into cmd.exe \
     pip install pdfplumber \
-    pip install pandas \
+    pip install pandas 
 
 
 # Bot Instalation
